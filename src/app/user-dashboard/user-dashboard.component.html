@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>User Dashboard</h2>
+
+  <!-- Movie List -->
+  <div *ngIf="movies && movies.length > 0; else noMovies">
+    <h4>Movie List</h4>
+    <div *ngFor="let movie of movies" class="movie-item">
+      <h5>{{ movie.Title }} ({{ movie.Year }})</h5>
+      <p>{{ movie.Type | slice: 0:150 }}...</p> <!-- Short description of the movie -->
+      <img [src]="movie.Poster" alt="{{ movie.title }} Poster" class="img-fluid">
+      <div class="rating">
+        <label *ngFor="let star of [1, 2, 3, 4, 5]" (click)="rateMovie(movie.id, star)">
+          <i class="fa"
+             [class.fa-star]="star <= ratings[movie.id]"
+             [class.fa-star-o]="star > ratings[movie.id]"
+             aria-hidden="true"></i>
+        </label>
+      </div>
+      <div>
+        <button class="btn btn-info" [routerLink]="['/movies', movie.id]">View Details</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- No Movies Available -->
+  <ng-template #noMovies>
+    <p>No movies available. Please check back later.</p>
+  </ng-template>
+</div>
+
+  

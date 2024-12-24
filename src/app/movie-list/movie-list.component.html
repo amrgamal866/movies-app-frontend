@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Our Films</h2>
+  
+    <!-- Delete Selected Movies Button -->
+    <button class="btn btn-danger" [disabled]="selectedMovies.length === 0" (click)="deleteSelectedMovies()">
+      Delete Selected Movies
+    </button>
+  
+    <!-- Movie List -->
+    <div class="row">
+      <div class="col-md-4" *ngFor="let movie of movies">
+        <div class="card">
+          <img class="card-img-top" [src]="movie.Poster" alt="{{ movie.Title }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ movie.Title }} ({{ movie.Year }})</h5>
+            <input type="checkbox" (change)="selectMovie(movie)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

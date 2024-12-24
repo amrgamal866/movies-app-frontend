@@ -1,0 +1,25 @@
+/* user-dashboard.component.css */
+.container {
+    padding: 20px;
+  }
+  
+  .movie-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .movie-item h5 {
+    font-size: 18px;
+  }
+  
+  .movie-item p {
+    color: #555;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
